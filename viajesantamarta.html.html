@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Viaje a Santa Marta</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f8ff;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(to right, #00695c, #26a69a);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #00796b;
+      border-bottom: 2px solid #00796b;
+      padding-bottom: 0.4rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+      background: white;
+      border: 1px solid #ccc;
+    }
+    table, th, td {
+      border: 1px solid #b2dfdb;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #b2dfdb;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    input[type="text"], input[type="time"] {
+      padding: 6px;
+      margin-right: 10px;
+    }
+    button {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    button:hover {
+      background-color: #004d40;
+    }
+  </style>
+<style>
+    .dark-mode {
+      background-color: #121212;
+      color: #f0f0f0;
+    }
+    .dark-mode header {
+      background: linear-gradient(to right, #004d40, #00796b);
+    }
+    .dark-mode table, .dark-mode th, .dark-mode td {
+      border-color: #444;
+    }
+    .dark-mode th {
+      background-color: #333;
+    }
+    .toggle-mode {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #00796b;
+      color: #fff;
+      padding: 8px 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <button class="toggle-mode" onclick="document.body.classList.toggle('dark-mode')">🌙 Modo oscuro</button>
+  <header>
+    <h1>Mi Viaje a Santa Marta</h1>
+    <p>Fecha: 2 al 8 de junio de 2025</p>
+  </header>
+
+  <section>
+    <h2>Sugerencia del día 🧭</h2>
+    <div id="daily-tip" style="background-color:#e0f2f1;padding:15px;border-radius:8px;margin-bottom:1.5rem;color:#004d40;font-weight:bold;"></div>
+    <h2>Itinerario</h2>
+    <p><strong>Checklist de actividades realizadas</strong></p>
+    <ul id="check-itinerario">
+      <li><input type="checkbox"> Día 1 - Salida desde casa hacia el aeropuerto</li>
+      <li><input type="checkbox"> Día 1 - Vuelo desde Bogotá</li>
+      <li><input type="checkbox"> Día 1 - Llegada a Santa Marta</li>
+      <li><input type="checkbox"> Día 1 - Traslado al hotel</li>
+      <li><input type="checkbox"> Día 1 - Check-in en The Color Hostel</li>
+      <li><input type="checkbox"> Día 1 - Playa y almuerzo económico</li>
+      <li><input type="checkbox"> Día 2 - Caminata por el centro histórico</li>
+      <li><input type="checkbox"> Día 2 - Museo del Oro Tairona</li>
+            <li><input type="checkbox"> Día 4 - Descanso y paseo nocturno</li>
+      <li><input type="checkbox"> Día 5 - Visita en lancha a Playa Blanca</li>
+      <li><input type="checkbox"> Día 5 - Mercado artesanal y souvenirs</li>
+      <li><input type="checkbox"> Día 6 - Comida típica costeña</li>
+      <li><input type="checkbox"> Día 7 - Salida hacia el aeropuerto</li>
+      <li><input type="checkbox"> Día 7 - Vuelo de regreso a Bogotá</li>
+    </ul>
+    <table id="itinerario">
+      <tr><th>Día</th><th>Actividad</th><th>Lugar</th><th>Hora</th></tr>
+      <tr><td>1</td><td>Salida desde casa hacia el aeropuerto</td><td>Bogotá</td><td>2:30 a.m.</td></tr>
+      <tr><td>1</td><td>Vuelo desde Bogotá</td><td>Aeropuerto El Dorado</td><td>5:00 a.m.</td></tr>
+      <tr><td>1</td><td>Llegada a Santa Marta</td><td>Aeropuerto Simón Bolívar</td><td>7:00 a.m.</td></tr>
+      <tr><td>1</td><td>Traslado al hotel</td><td>Ruta al Rodadero</td><td>7:15 a.m.</td></tr>
+      <tr><td>1</td><td>Check-in</td><td><a href='https://maps.app.goo.gl/hTtAp4wm7b6nc7Um8' target='_blank'>The Color Hostel</a></td><td>8:00 a.m.</td></tr>
+      <tr><td>1</td><td>Playa y almuerzo económico</td><td>Rodadero</td><td>12:00 p.m.</td></tr>
+      <tr><td>2</td><td>Caminata por el centro histórico</td><td>Santa Marta</td><td>9:00 a.m.</td></tr>
+      <tr><td>2</td><td>Museo del Oro Tairona</td><td>Banco de la República</td><td>3:00 p.m.</td></tr>
+            <tr><td>4</td><td>Descanso y paseo nocturno</td><td>Bahía de Santa Marta</td><td>7:00 p.m.</td></tr>
+      <tr><td>5</td><td>Visita en lancha a Playa Blanca</td><td>Rodadero</td><td>8:00 a.m.</td></tr>
+      <tr><td>5</td><td>Mercado artesanal y souvenirs</td><td>Centro</td><td>10:00 a.m.</td></tr>
+      <tr><td>6</td><td>Comida típica costeña</td><td>Restaurante económico</td><td>1:00 p.m.</td></tr>
+      <tr><td>7</td><td>Salida hacia el aeropuerto</td><td>Desde The Color Hostel</td><td>7:45 a.m.</td></tr>
+      <tr><td>7</td><td>Vuelo de regreso a Bogotá</td><td>Aeropuerto Simón Bolívar</td><td>11:00 a.m.</td></tr>
+    </table>
+    <form id="form-itinerario">
+      <input type="text" id="dia" placeholder="Día" required>
+      <input type="text" id="actividad" placeholder="Actividad" required>
+      <input type="text" id="lugar" placeholder="Lugar" required>
+      <input type="time" id="hora" required>
+      <button type="submit">Agregar</button>
+    </form>
+
+    <h2>Presupuesto estimado (COP)</h2>
+    <table>
+      <tr><th>Categoría</th><th>Valor (2 personas)</th></tr>
+      <tr><td>Alimentación (menús del día y snacks)</td><td>$550,000</td></tr>
+      <tr><td>Transporte local (bus, taxi y lancha)</td><td>$400,000</td></tr>
+      <tr><td>Entradas y actividades (incluye lancha)</td><td>$350,000</td></tr>
+      <tr><td>Compras y souvenirs pequeños</td><td>$200,000</td></tr>
+      <tr><td>Emergencias / extras</td><td>$250,000</td></tr>
+      <tr><th>Total</th><th>$1,750,000</th></tr>
+    </table>
+    <p><em>Nota: El presupuesto está calculado para 2 personas e incluye la actividad en lancha a Playa Blanca. Hotel y vuelos no están incluidos. Total estimado: $2.000.000 COP</em></p>
+
+    <h2>Checklist de Viaje</h2>
+    <ul>
+      <li><input type="checkbox"> Cédula / Documentos</li>
+      <li><input type="checkbox"> Pasajes y reservas</li>
+      <li><input type="checkbox"> Ropa fresca y cómoda</li>
+      <li><input type="checkbox"> Sandalias / zapatos para caminar</li>
+      <li><input type="checkbox"> Traje de baño y toalla</li>
+      <li><input type="checkbox"> Protector solar y repelente</li>
+      <li><input type="checkbox"> Kit de aseo y botiquín básico</li>
+      <li><input type="checkbox"> Celular, cargador y batería externa</li>
+      <li><input type="checkbox"> Dinero en efectivo y tarjeta débito</li>
+    </ul>
+
+    <h2>Reservas</h2>
+    <p><a href="https://booking.jetsmart.com/V2/Itinerary" target="_blank" style="display:inline-block;background-color:#00796b;color:#fff;padding:10px 15px;border-radius:5px;text-decoration:none;">Ir a JetSmart para ver los tiquetes</a></p>
+    <ul>
+      <li>Hospedaje: The Color Hostel</li>
+      <li>Vuelo ida: Bogotá ➜ Santa Marta</li>
+      <li>Vuelo regreso: Santa Marta ➜ Bogotá</li>
+    </ul>
+
+    <h2>Mapa interactivo</h2>
+    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1wWsf2WeLhDSS-fsS1AeMNzC3RmY4x_s&ehbc=2E312F" width="100%" height="400"></iframe>
+
+    <h2>Galería de Fotos</h2>
+    <input type="file" id="fileInput" accept="image/*" multiple>
+    <div id="gallery" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1rem;"></div>
+  </section>
+
+  <script>
+    document.getElementById('form-itinerario').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const dia = document.getElementById('dia').value;
+      const actividad = document.getElementById('actividad').value;
+      const lugar = document.getElementById('lugar').value;
+      const hora = document.getElementById('hora').value;
+
+      const tabla = document.getElementById('itinerario');
+      const fila = tabla.insertRow();
+      fila.innerHTML = `<td>${dia}</td><td>${actividad}</td><td>${lugar}</td><td>${hora}</td>`;
+
+      document.getElementById('form-itinerario').reset();
+    });
+    // Guardar checklist de viaje
+    const checklistItems = document.querySelectorAll('ul input[type="checkbox"]');
+    checklistItems.forEach((box, index) => {
+      const key = 'checklist_' + index;
+      box.checked = localStorage.getItem(key) === 'true';
+      box.addEventListener('change', () => {
+        localStorage.setItem(key, box.checked);
+      });
+    });
+
+    // Guardar checklist del itinerario
+    const itinChecklist = document.querySelectorAll('#check-itinerario input[type="checkbox"]');
+    itinChecklist.forEach((item, i) => {
+      const key = 'itin_' + i;
+      item.checked = localStorage.getItem(key) === 'true';
+      item.addEventListener('change', () => {
+        localStorage.setItem(key, item.checked);
+      });
+    });
+    // Galería de imágenes local
+    const fileInput = document.getElementById('fileInput');
+    const gallery = document.getElementById('gallery');
+
+    fileInput.addEventListener('change', (event) => {
+      const files = event.target.files;
+      gallery.innerHTML = '';
+      Array.from(files).forEach(file => {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          img.style.width = '150px';
+          img.style.borderRadius = '10px';
+          img.style.boxShadow = '0 2px 6px rgba(0,0,0,0.2)';
+          gallery.appendChild(img);
+        };
+        reader.readAsDataURL(file);
+      });
+    });
+    // Sugerencias diarias automáticas
+    const tips = [
+      'No olvides hidratarte bien durante tus paseos. Lleva siempre una botella de agua. 💧',
+      'Usa protector solar incluso en días nublados. ☁️☀️',
+      'Lleva billetes pequeños para el transporte y compras en la playa. 💵',
+      'Pregunta por los platos del día para ahorrar en alimentación. 🍛',
+      'No salgas sin tu cédula o copia digital. 🪪',
+      'Consulta el clima antes de salir cada mañana. 🌤️',
+      'Guarda tus recuerdos: toma fotos, pero también vive el momento. 📸',
+    ];
+    const day = new Date().getDate() % tips.length;
+    document.getElementById('daily-tip').innerText = tips[day];
+  </script>
+</body>
+</html>
